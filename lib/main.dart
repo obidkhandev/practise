@@ -30,8 +30,6 @@ class HomePage extends StatefulWidget {
 
 List<String> itemName = [
   "Behance Project",
-  "Behance Project",
-  "Uber Monthly",
   "Uber Monthly",
   "ATM Withdraws",
   "Transfer Money",
@@ -41,8 +39,6 @@ List<String> itemName = [
 
 List<String> itemMoney = [
   "\$320",
-  "\$320",
-  "\$650",
   "\$650",
   "\$330",
   "\$100",
@@ -51,8 +47,6 @@ List<String> itemMoney = [
 ];
 List<String> itemDate = [
   "23rd march 2021",
-  "23rd march 2021",
-  "04th february 2021",
   "04th february 2021",
   "BDT ACCOUNT",
   "INR ACCOUNT",
@@ -81,43 +75,43 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
             // backgroundColor:
-            flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                padding: EdgeInsets.only(top: 70, left: 12, right: 12),
-                margin: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                    color: Color(0xffF5F6FA),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Balances",
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    SizedBox(height: 20),
-                    SizedBox(
-                      height: 120,
-                      width: double.infinity,
-                      child: ListView.builder(
-                          itemCount: 4,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              height: 120,
-                              width: 100,
-                              margin: EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            );
-                          }),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // flexibleSpace: FlexibleSpaceBar(
+            //   background: Container(
+            //     padding: EdgeInsets.only(top: 70, left: 12, right: 12),
+            //     margin: EdgeInsets.all(16),
+            //     decoration: BoxDecoration(
+            //         color: Color(0xffF5F6FA),
+            //         borderRadius: BorderRadius.circular(15)),
+            //     child: Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: [
+            //         Text(
+            //           "Balances",
+            //           style: TextStyle(fontSize: 24),
+            //         ),
+            //         SizedBox(height: 20),
+            //         SizedBox(
+            //           height: 120,
+            //           width: double.infinity,
+            //           child: ListView.builder(
+            //               itemCount: 4,
+            //               scrollDirection: Axis.horizontal,
+            //               itemBuilder: (context, index) {
+            //                 return Container(
+            //                   height: 120,
+            //                   width: 100,
+            //                   margin: EdgeInsets.symmetric(horizontal: 12),
+            //                   decoration: BoxDecoration(
+            //                     color: Colors.white,
+            //                     borderRadius: BorderRadius.circular(15),
+            //                   ),
+            //                 );
+            //               }),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ),
           SliverPersistentHeader(
             pinned: true,
@@ -138,8 +132,8 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     children: [
                       Container(
-                        height: 62,
-                        width: 76,
+                        height: 52,
+                        width: 56,
                         decoration: BoxDecoration(
                             color: Colors.white60,
                             borderRadius: BorderRadius.circular(10),
