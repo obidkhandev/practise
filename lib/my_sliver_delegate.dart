@@ -17,7 +17,9 @@ class MySliverDelegate extends SliverPersistentHeaderDelegate{
         itemBuilder: (context,index){
       return TextButton(onPressed: (){
 
-      }, child: Text("${category[index]}",style: TextStyle(color: _selectedIndex == index? Colors.blue: Colors.green),),);
+      }, child: Text("${category[index]}",
+        style: TextStyle(color: _selectedIndex == index? Colors.blue: Colors.green),
+      ),);
     });
 
 
