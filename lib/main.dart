@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -53,6 +54,14 @@ List<String> itemDate = [
   "INR ACCOUNT",
   "INR ACCOUNT",
 ];
+List<String> gridItem = [
+  "assets/images/Sayur-png 1.png",
+  'assets/images/meat 1.png',
+  'assets/images/fruit 2.png',
+  'assets/images/soup.webp',
+  'assets/images/chicken-png 1.png',
+  'assets/images/chicken-png 1.png',
+];
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -62,112 +71,206 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 330,
-            pinned: true,
-            leading: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_back),
+            backgroundColor: Colors.white,
+            expandedHeight: 130,
+            // pinned: true,
+            floating: true,
+            snap: true,
+            title: Padding(
+              padding: const EdgeInsets.only(right: 120),
+              child: RichText(
+                text: const TextSpan(
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                    children: [
+                      TextSpan(
+                        text: "Hello, ",
+                      ),
+                      TextSpan(
+                        text: "Fahmi\n",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.amber),
+                      ),
+                      TextSpan(
+                        text: "Find The Right One For A Healthy Body",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ]),
+              ),
             ),
             actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.more_horiz),
+              Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications,
+                    color: Colors.amber,
+                  ),
+                  style: IconButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.grey, width: 1),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    backgroundColor: Colors.transparent,
+                  ),
+                ),
               ),
             ],
-            // backgroundColor:
-            // flexibleSpace: FlexibleSpaceBar(
-            //   background: Container(
-            //     padding: EdgeInsets.only(top: 70, left: 12, right: 12),
-            //     margin: EdgeInsets.all(16),
-            //     decoration: BoxDecoration(
-            //         color: Color(0xffF5F6FA),
-            //         borderRadius: BorderRadius.circular(15)),
-            //     child: Column(
-            //       crossAxisAlignment: CrossAxisAlignment.start,
-            //       children: [
-            //         Text(
-            //           "Balances",
-            //           style: TextStyle(fontSize: 24),
-            //         ),
-            //         SizedBox(height: 20),
-            //         SizedBox(
-            //           height: 120,
-            //           width: double.infinity,
-            //           child: ListView.builder(
-            //               itemCount: 4,
-            //               scrollDirection: Axis.horizontal,
-            //               itemBuilder: (context, index) {
-            //                 return Container(
-            //                   height: 120,
-            //                   width: 100,
-            //                   margin: EdgeInsets.symmetric(horizontal: 12),
-            //                   decoration: BoxDecoration(
-            //                     color: Colors.white,
-            //                     borderRadius: BorderRadius.circular(15),
-            //                   ),
-            //                 );
-            //               }),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
+            flexibleSpace: FlexibleSpaceBar(
+              background: Padding(
+                padding: const EdgeInsets.only(top: 105, right: 12, left: 12),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 300,
+                      // height: 50,
+                      child: TextField(
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: InputDecoration(
+                            hintText: "Search",
+
+                            // hintTextDirection: TextDirection.,
+                            suffixIconColor: Colors.grey,
+                            prefixIcon: Icon(Icons.search),
+                            hintStyle: TextStyle(color: Colors.grey),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide(color: Colors.grey))),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        CupertinoIcons.settings,
+                        color: Colors.amber,
+                        size: 32,
+                      ),
+                      style: IconButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        backgroundColor: Colors.purpleAccent.withOpacity(0.05),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Category",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                  Text(
+                    "Show All",
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
           ),
           SliverPersistentHeader(
             pinned: true,
             delegate: MySliverDelegate(),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text("Today",
-                    style: AppTextStyle.interRegular
-                        .copyWith(color: Colors.black, fontSize: 22)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Best Deal",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    height: 160,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/soup.webp"),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                ],
               ),
-              ...List.generate(itemName.length, (index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Row(
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Best Price",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                  Text(
+                    "Show All",
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverGrid(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200.0,
+
+              // mainAxisSpacing: 10.0,
+              // crossAxisSpacing: 10.0,
+              childAspectRatio: 1.0,
+            ),
+            delegate: SliverChildBuilderDelegate(
+              childCount: gridItem.length,
+
+              (context, index) {
+                return Container(
+                  height: 200,
+    margin:  EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(width: 1, color: Colors.grey),
+                  ),
+                  child: Column(
                     children: [
                       Container(
-                        height: 52,
-                        width: 56,
+                        // height: 150,
+
+                        width: double.infinity,
                         decoration: BoxDecoration(
-                            color: Colors.white60,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(4, 4),
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 4,
-                                  blurRadius: 10),
-                            ]),
+                            image: DecorationImage(image: AssetImage(gridItem[index]),fit: BoxFit.cover),
+                            color: Colors.grey,
+                        ),
                       ),
-                      SizedBox(width: 10),
-                      RichText(
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: itemName[index] + '\n',
-                              style: AppTextStyle.interSemiBold
-                                  .copyWith(color: Colors.black, fontSize: 18),
-                          ),
-                          TextSpan(
-                            text: itemDate[index],
-                            style: AppTextStyle.interSemiBold
-                                .copyWith(color: Colors.grey, fontSize: 16),
-                          ),
-                        ]),
-                      ),
-                      Spacer(),
-                      Text(itemMoney[index],style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),)
                     ],
                   ),
                 );
-              })
-            ]),
-          )
+              },
+            ),
+          ),
         ],
       ),
     );
