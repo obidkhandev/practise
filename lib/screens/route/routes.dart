@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practise/screens/animations/anim1.dart';
+import 'package:practise/screens/animations/anim11.dart';
+import 'package:practise/screens/animations/anim13.dart';
+import 'package:practise/screens/animations/anim14.dart';
 import 'package:practise/screens/animations/anim4.dart';
 import 'package:practise/screens/animations/anim5.dart';
 import 'package:practise/screens/home/home_page.dart';
 import 'package:practise/utils/route_name/route_name.dart';
 
+import '../animations/anim10.dart';
+import '../animations/anim12.dart';
 import '../animations/anim2.dart';
 import '../animations/anim6.dart';
 import '../animations/anim7.dart';
@@ -37,6 +42,16 @@ class AppRoute {
         return navigate(Animation8());
       case RouteName.anim9:
         return navigate(Animation9());
+      case RouteName.anim10:
+        return navigate(Animation10());
+      case RouteName.anim11:
+        return navigate(Animation11());
+      case RouteName.anim12:
+        return navigate(Animation12());
+      case RouteName.anim13:
+        return navigate(Animation13());
+      case RouteName.anim14:
+        return navigate(Animation14());
 
       default:
         return navigate(

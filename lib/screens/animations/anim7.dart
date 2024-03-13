@@ -36,20 +36,28 @@ class _Animations7State extends State<Animations7>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Transform.rotate(
-              angle: animation.value,
-              child: Container(
-                height: 100,
-                width: 100,
-                color: Colors.blue,
-              ),
-            ),
+            child: AnimatedBuilder(animation: animationController, builder: (BuildContext context, _) {
+              return Transform.rotate(
+                angle: animation.value,
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+              );
+            },)
           )
         ],
       ),

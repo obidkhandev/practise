@@ -61,6 +61,7 @@ class _Animation4State extends State<Animation4>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _buildCircle(Colors.red),
                   _buildCircle(Colors.blue),
@@ -68,6 +69,7 @@ class _Animation4State extends State<Animation4>
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _buildCircle(Colors.green),
                   _buildCircle(Colors.yellow),
