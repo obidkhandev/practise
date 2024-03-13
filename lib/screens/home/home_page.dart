@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../my_sliver_delegate.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -14,7 +12,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Column(
+        children: [
 
+        ],
+      ),
     );
   }
 }
