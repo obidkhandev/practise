@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MyFlag extends StatelessWidget {
@@ -35,7 +37,6 @@ class FlagPainter extends CustomPainter {
     final redPaint = Paint()..color = Colors.red;
 
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height * 1 / 3), bluePaint);
-
     canvas.drawRect(Rect.fromLTWH(0, size.height * 1 / 3, size.width, size.height * 1 / 3), whitePaint);
 
     canvas.drawRect(Rect.fromLTWH(0, size.height * 2 / 3, size.width, size.height * 1 / 3), greenPaint);

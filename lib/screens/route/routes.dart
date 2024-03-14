@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practise/screens/customs/flag.dart';
 import 'package:practise/screens/customs/mood_painter.dart';
 import 'package:practise/screens/customs/snowMan.dart';
+import 'package:practise/screens/customs/wave.dart';
 import 'package:practise/utils/route_name/route_name.dart';
 
 import '../home/home_page.dart';
@@ -22,6 +22,8 @@ class AppRoute {
         return navigate(SnowMan());
       case RouteName.mood:
         return navigate(Mood());
+      case RouteName.wave:
+        return navigate(WavePage());
 
       default:
         return navigate(

@@ -13,8 +13,9 @@ class _HomePageState extends State<HomePage> {
     RouteName.flag,
     RouteName.snowMan,
     RouteName.mood,
+    RouteName.wave,
   ];
-  List<String> customName = ["UZB FLAG", "Snow Man", "Mood"];
+  List<String> customName = ["UZB FLAG", "Snow Man", "Mood","Wave"];
 
   @override
   Widget build(BuildContext context) {

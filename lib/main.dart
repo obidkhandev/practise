@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practise/screens/home/home_page.dart';
 import 'package:practise/screens/route/routes.dart';
 import 'package:practise/utils/route_name/route_name.dart';
 
