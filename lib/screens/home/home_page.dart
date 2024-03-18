@@ -80,13 +80,12 @@ class HomePage extends StatelessWidget {
       );
     });
   }
-
   Color getBtnColor(value) {
     return [Btn.clr, Btn.del].contains(value)
         ? Colors.red
         : [
             Btn.per,
-            Btn.multpley,
+            Btn.multiply,
             Btn.add,
             Btn.subtract,
             Btn.divide,

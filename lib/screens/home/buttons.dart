@@ -2,7 +2,7 @@ class Btn {
   static const String del = 'D';
   static const String clr = 'C';
   static const String per = '%';
-  static const String multpley = '×';
+  static const String multiply = '×';
   static const String divide = '÷';
   static const String add = '+';
   static const String subtract = '-';
@@ -26,7 +26,7 @@ class Btn {
     del,
     clr,
     per,
-    multpley,
+    multiply,
     n7,
     n8,
     n9,
