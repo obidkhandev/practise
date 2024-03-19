@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                               .isEmpty
                           ? '0'
                           : "${viewModel.numberOne}${viewModel.operand}${viewModel.numberTwo}",
-                      style: TextStyle(color: Colors.black,fontSize: 24),
+                      style: TextStyle(color: Colors.black, fontSize: 24),
                     );
                   },
                 ),
@@ -38,18 +38,19 @@ class HomePage extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xffE9F6FF),
-                  ),
-                  child: Wrap(
-                    children: Btn.buttonValues.map((e) {
-                      return SizedBox(
-                        width: MediaQuery.of(context).size.width / 4,
-                        height: MediaQuery.of(context).size.height / 9,
-                        child: buildButton(e),
-                      );
-                    }).toList(),
-                  )),
+                decoration: const BoxDecoration(
+                  color: Color(0xffE9F6FF),
+                ),
+                child: Wrap(
+                  children: Btn.buttonValues.map((e) {
+                    return SizedBox(
+                      width: MediaQuery.of(context).size.width / 4,
+                      height: MediaQuery.of(context).size.height / 9,
+                      child: buildButton(e),
+                    );
+                  }).toList(),
+                ),
+              ),
             ),
           ],
         ),
@@ -59,15 +60,11 @@ class HomePage extends StatelessWidget {
 
   Widget buildButton(value) {
     return Consumer<CalculateViewModel>(builder: (context, viewModel, child) {
-      return InkWell(
-        onTap: () {
-          debugPrint(value);
+      return IconButton(
+        onPressed: () {
           viewModel.onTapButton(value);
-          debugPrint(viewModel.operand);
-          debugPrint(viewModel.numberOne);
-          debugPrint(viewModel.numberTwo);
         },
-        child: Center(
+        icon: Center(
           child: Text(
             value,
             style: TextStyle(
@@ -80,6 +77,7 @@ class HomePage extends StatelessWidget {
       );
     });
   }
+
   Color getBtnColor(value) {
     return [Btn.clr, Btn.del].contains(value)
         ? Colors.red
